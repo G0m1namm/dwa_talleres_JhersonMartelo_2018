@@ -2,15 +2,16 @@
     box-sizing: border-box;
     overflow: hidden;
 }
+
 body{
     margin: 0;
     padding: 0;
     font-family: 'Varela Round', sans-serif;
     font-family: 'Montserrat', sans-serif;
 }
+
 .bg-login-mobile{
     position: absolute;
-    overflow: hidden;
     top: 0;
     right: 0;
     bottom: 0;
@@ -18,10 +19,23 @@ body{
 
     img{
         background-size: cover;
+        width: min-content;
         transform: translateY(-200px);
     }
 }
-.container-logo{
+
+.bg-login-desktop{
+    position: absolute;
+    
+
+    img{
+        background-size: contain;
+        width: fit-content;
+        transform: translateY(-30%);
+    }
+}
+.container-logo,
+.form-logo-desktop{
     position: relative;
     display: block;
     transition: all .7s ease-in-out;
@@ -33,6 +47,8 @@ body{
         height:auto;
     }
 }
+
+
 
 .button-login {
     position: relative;
@@ -78,16 +94,16 @@ body{
     position:relative;
     letter-spacing: 2px;
 }
-.form-logo{
+.form-logo,
+.form-logo-desktop{
     width: 80%;
     margin: 0 auto;
-}
 
-form{
-    text-align: center;
-    margin-top: 60px;
+    form{
+        text-align: center;
+    }
 }
-label{
+label {
   display: block;
   letter-spacing: 4px;
   padding-top: 30px;
@@ -147,12 +163,118 @@ label{
         border-radius: 14px;
         color: #F50057;
     }
+    &[type="number"]::-webkit-inner-spin-button,
+    &[type="number"]::-webkit-outer-spin-button{
+        -webkit-appearance: none; 
+         margin: 0;    
+    }
    
   }
-}       
+}
+
 #logo{
     display: block;
     width: 55%;
     margin: 0 auto;
     // margin-bottom: 90%;
+}
+@media  only screen and (min-width: 469px){
+    .bg-login-mobile{
+        display: none;
+    }
+
+    .container-logo{
+        width: 100%;
+        padding-top: 10px;
+
+        .button-login-desktop{
+            float: right;
+            margin: 25px 25px 35px 0;
+        }
+        
+        .button-login-mobile{
+            display: none;
+        }
+    }
+    .form-logo{
+       display: none;
+    }
+    // .form-logo-desktop{
+    //     position: relative;
+    //     label {
+    //         display: block;
+    //         letter-spacing: 4px;
+    //         padding-top: 30px;
+    //         text-align: center;
+    //         font-family: 'Varela Round';
+          
+    //         .label-text{
+    //           color: #3A25A3;
+    //           cursor: text;
+    //           font-size: .7em;
+    //           font-style: bold;
+    //           font-weight: 600;
+    //           line-height: 20px;
+    //           letter-spacing: 2px;
+    //           text-transform: uppercase;
+    //           transform:translateY(-34px);
+    //           transition: all 0.6s;
+    //         }
+    //         input{
+    //           background-color: transparent;
+    //           border: 0;
+    //           border-radius: 0;
+    //           border-bottom: 2px solid #e17ff0;
+    //           color: #3A25A3;
+    //           font-size: 1.2em;
+    //           letter-spacing: -1px;
+    //           outline: 0;
+    //           padding: 5px 30px;
+    //           text-align: center;
+    //           transition: all 0.6s ease;
+    //           width: 200px;
+              
+    //           &:focus{ 
+    //             max-width: 100%;
+    //             width: 300px;
+    //             border-radius: 14px;
+          
+    //             & + .label-text{
+    //               color: #3A25A3;
+    //               font-size: 13px;
+    //               letter-spacing: 5px;
+    //               transform:translateY(-64px);
+    //             }
+    //           }
+    //           &:valid{
+    //               border-radius: 7px;
+          
+    //               & + .label-text{
+    //                   font-size: 13px;
+    //                   letter-spacing: 5px;
+    //                   transform:translateY(-64px);
+    //                   opacity: 0.4;
+    //               }
+    //           }
+    //           &:invalid{
+    //               border-bottom: 3px solid #F50057;
+    //               border-radius: 14px;
+    //               color: #F50057;
+    //           }
+    //           &[type="number"]::-webkit-inner-spin-button,
+    //           &[type="number"]::-webkit-outer-spin-button{
+    //               -webkit-appearance: none; 
+    //                margin: 0;    
+    //           }
+             
+    //         }
+    //       }
+    // }
+    #logo{
+        max-width: 17%;
+        min-width: 180px;
+        margin-left: 10px;
+        float: left;
+    }
+    
 }

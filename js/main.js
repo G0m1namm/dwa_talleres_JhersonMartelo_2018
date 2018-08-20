@@ -1,5 +1,16 @@
 var button_login = document.querySelector('.button-login');
 // This is the important part!
+function mediaDesktop(x) {
+  if (x.matches) { // If media query matches
+      document.body.style.backgroundColor = "yellow";
+  } else {
+      document.body.style.backgroundColor = "pink";
+  }
+}
+
+var x = window.matchMedia("(min-width: 469px)")
+mediaDesktop(x) // Call listener function at run time
+x.addListener(mediaDesktop)
 
 function collapseSection(element) {
     // get the height of the element's inner content, regardless of its actual size
@@ -46,7 +57,7 @@ function collapseSection(element) {
     // mark the section as "currently not collapsed"
     element.setAttribute('data-collapsed', 'false');
   }
-  
+
   button_login.addEventListener('click', function(e) {
     var section = document.querySelector('.part.collapsible');
     var isCollapsed = section.getAttribute('data-collapsed') === 'true';

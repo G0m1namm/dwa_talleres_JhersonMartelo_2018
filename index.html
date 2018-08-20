@@ -10,11 +10,17 @@
 
 </head>
 <body>
+    <div class="bg-login-desktop">
+        <img src="/img/bg-login-desktop.png" alt="">
+    </div>
     <div class="bg-login-mobile">
         <img src="/img/bg-login-mobile3.png" alt="">
     </div>
+    
     <div class="container-logo">
-        <img id="logo" class="part" src="/img/logo-contrast.png" alt="">
+        <img id="logo" class="part" src="/img/logo.png" alt="">
+
+        <a href="#" class="button-login button-login-desktop">Login</a>
         <!-- Form login -->
         <div class="form-logo part collapsible" data-collapsed="false">
             <form>
@@ -28,8 +34,21 @@
                 </label>
             </form>
         </div>
-        <a href="#" class="button-login part">Login</a>
+        <a href="#" class="button-login part button-login-mobile">Login</a>
     </div>
+    <div class="form-logo-desktop part collapsible" data-collapsed="false">
+            <form>
+                <label>
+                    <input type="text" required />
+                    <div class="label-text">Correo</div>
+                </label>
+                <label>
+                    <input type="number" required />
+                    <div class="label-text">ID</div>
+                </label>
+            </form>
+        </div>
 </body>
+    <script src="js/anime.min.js"></script>
     <script src="js/main.js"></script>
 </html>
