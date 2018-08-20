@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+    background-color: #593ef0;
+}
 body{
     margin: 0;
     padding: 0;
@@ -7,8 +11,17 @@ body{
 }
 .container-logo{
     position: relative;
+    display: block;
     margin-top: 25%;
+    transition: all .7s ease-in-out;
+
+    .part{
+        overflow:hidden;
+        transition: height 0.3s ease-out;
+        height:auto;
+    }
 }
+
 .button-login {
     position: relative;
 	-moz-box-shadow: 1px 4px 18px -3px #3A25A3;
@@ -26,6 +39,7 @@ body{
     display:block;
     width: fit-content;
     margin: 0 auto;
+    margin-top: 100px;
 	cursor: pointer;
     color:#ffffff;
     font-family: 'Varela Round';
@@ -45,17 +59,74 @@ body{
         background-color:#593ef0;
     }
 }
-// .button-login:hover {
-	
-// }
+   
 .button-login:active {
     position:relative;
     letter-spacing: 2px;
 }
+.form-logo{
+    width: 80%;
+    margin: 0 auto;
+}
 
+form{
+    text-align: center;
+    margin-top: 50px;
+}
+label{
+  display: block;
+  letter-spacing: 4px;
+  padding-top: 30px;
+  text-align: center;
+  font-family: 'Varela Round';
+
+  .label-text{
+    color: white;
+    cursor: text;
+    font-size: .7em;
+    font-style: bold;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transform:translateY(-34px);
+    transition: all 0.3s;
+  }
+  input{
+    background-color: transparent;
+    border: 0;
+    border-radius: 14px;
+    border-bottom: 2px solid #e17ff0;
+    color: whitesmoke;
+    font-size: 1.2em;
+    letter-spacing: -1px;
+    outline: 0;
+    padding: 5px 30px;
+    text-align: center;
+    transition: all 0.6s ease;
+    width: 200px;
+    
+    &:focus{ 
+      max-width: 100%;
+      width: 300px;
+      & + .label-text{
+        color: white;
+        font-size: 13px;
+        letter-spacing: 5px;
+        transform:translateY(-64px);
+      }
+    }
+    &:valid + .label-text{
+      font-size: 13px;
+      letter-spacing: 5px;
+      transform:translateY(-64px);
+      opacity: 0.4;
+    }
+  }
+}       
 #logo{
     display: block;
-    width: 45%;
+    width: 55%;
     margin: 0 auto;
-    margin-bottom: 100%;
+    // margin-bottom: 90%;
 }

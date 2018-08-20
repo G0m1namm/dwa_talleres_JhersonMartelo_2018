@@ -11,8 +11,21 @@
 </head>
 <body>
     <div class="container-logo">
-        <img id="logo" src="/img/logo.png" alt="">
-        <a href="#" class="button-login">Login</a>
+        <img id="logo" class="part" src="/img/logo-contrast.png" alt="">
+        <!-- Form login -->
+        <div class="form-logo part collapsible" data-collapsed="false">
+            <form>
+                <label>
+                    <input type="text" required />
+                    <div class="label-text">Correo</div>
+                </label>
+                <label>
+                    <input type="text" required />
+                    <div class="label-text">ID</div>
+                </label>
+            </form>
+        </div>
+        <a href="#" class="button-login part">Login</a>
     </div>
 </body>
     <script src="js/main.js"></script>
