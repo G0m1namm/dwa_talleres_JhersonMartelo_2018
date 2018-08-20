@@ -1,38 +1,52 @@
 /* line 1, ../sass/_generals.scss */
 * {
   box-sizing: border-box;
-  background-color: #593ef0;
+  overflow: hidden;
 }
 
 /* line 5, ../sass/_generals.scss */
 body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
   font-family: 'Varela Round', sans-serif;
   font-family: 'Montserrat', sans-serif;
 }
 
-/* line 12, ../sass/_generals.scss */
+/* line 11, ../sass/_generals.scss */
+.bg-login-mobile {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+/* line 19, ../sass/_generals.scss */
+.bg-login-mobile img {
+  background-size: cover;
+  transform: translateY(-200px);
+}
+
+/* line 24, ../sass/_generals.scss */
 .container-logo {
   position: relative;
   display: block;
-  margin-top: 25%;
   transition: all .7s ease-in-out;
+  padding-top: 90px;
 }
-/* line 18, ../sass/_generals.scss */
+/* line 30, ../sass/_generals.scss */
 .container-logo .part {
   overflow: hidden;
-  transition: height 0.3s ease-out;
+  transition: height 0.6s ease-out;
   height: auto;
 }
 
-/* line 25, ../sass/_generals.scss */
+/* line 37, ../sass/_generals.scss */
 .button-login {
   position: relative;
-  -moz-box-shadow: 1px 4px 18px -3px #3A25A3;
-  -webkit-box-shadow: 1px 4px 18px -3px #3A25A3;
-  box-shadow: 1px 4px 18px -3px #3A25A3;
+  -moz-box-shadow: 0px 2px 14px -3px #3A25A3;
+  -webkit-box-shadow: 0px 2px 14px -3px #3A25A3;
+  box-shadow: 0px 2px 14px -3px #3A25A3;
   background: -moz-linear-gradient(top, #e17ff0 1%, #593ef0 100%);
   background: -webkit-linear-gradient(top, #e17ff0 1%, #593ef0 100%);
   background: -o-linear-gradient(top, #e17ff0 1%, #593ef0 100%);
@@ -45,18 +59,20 @@ body {
   display: block;
   width: fit-content;
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 20%;
+  margin-bottom: 8px;
   cursor: pointer;
   color: #ffffff;
   font-family: 'Varela Round';
   font-size: 0.8em;
   font-weight: bold;
+  letter-spacing: 1px;
   padding: 13px 32px;
   text-decoration: none;
   text-shadow: 0px 1px 50px #3d768a;
-  transition: all 0.25s ease;
+  transition: letter-spacing .6s all ease;
 }
-/* line 53, ../sass/_generals.scss */
+/* line 67, ../sass/_generals.scss */
 .button-login:hover {
   background: -moz-linear-gradient(top, #593ef0 1%, #e17ff0 100%);
   background: -webkit-linear-gradient(top, #593ef0 1%, #e17ff0 100%);
@@ -66,25 +82,25 @@ body {
   background-color: #593ef0;
 }
 
-/* line 63, ../sass/_generals.scss */
+/* line 77, ../sass/_generals.scss */
 .button-login:active {
   position: relative;
   letter-spacing: 2px;
 }
 
-/* line 67, ../sass/_generals.scss */
+/* line 81, ../sass/_generals.scss */
 .form-logo {
   width: 80%;
   margin: 0 auto;
 }
 
-/* line 72, ../sass/_generals.scss */
+/* line 86, ../sass/_generals.scss */
 form {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 60px;
 }
 
-/* line 76, ../sass/_generals.scss */
+/* line 90, ../sass/_generals.scss */
 label {
   display: block;
   letter-spacing: 4px;
@@ -92,26 +108,26 @@ label {
   text-align: center;
   font-family: 'Varela Round';
 }
-/* line 83, ../sass/_generals.scss */
+/* line 97, ../sass/_generals.scss */
 label .label-text {
-  color: white;
+  color: #3A25A3;
   cursor: text;
   font-size: .7em;
   font-style: bold;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 20px;
   letter-spacing: 2px;
   text-transform: uppercase;
   transform: translateY(-34px);
-  transition: all 0.3s;
+  transition: all 0.6s;
 }
-/* line 95, ../sass/_generals.scss */
+/* line 109, ../sass/_generals.scss */
 label input {
   background-color: transparent;
   border: 0;
-  border-radius: 14px;
+  border-radius: 0;
   border-bottom: 2px solid #e17ff0;
-  color: whitesmoke;
+  color: #3A25A3;
   font-size: 1.2em;
   letter-spacing: -1px;
   outline: 0;
@@ -120,27 +136,38 @@ label input {
   transition: all 0.6s ease;
   width: 200px;
 }
-/* line 109, ../sass/_generals.scss */
+/* line 123, ../sass/_generals.scss */
 label input:focus {
   max-width: 100%;
   width: 300px;
+  border-radius: 14px;
 }
-/* line 112, ../sass/_generals.scss */
+/* line 128, ../sass/_generals.scss */
 label input:focus + .label-text {
-  color: white;
+  color: #3A25A3;
   font-size: 13px;
   letter-spacing: 5px;
   transform: translateY(-64px);
 }
-/* line 119, ../sass/_generals.scss */
+/* line 135, ../sass/_generals.scss */
+label input:valid {
+  border-radius: 7px;
+}
+/* line 138, ../sass/_generals.scss */
 label input:valid + .label-text {
   font-size: 13px;
   letter-spacing: 5px;
   transform: translateY(-64px);
   opacity: 0.4;
 }
+/* line 145, ../sass/_generals.scss */
+label input:invalid {
+  border-bottom: 3px solid #F50057;
+  border-radius: 14px;
+  color: #F50057;
+}
 
-/* line 127, ../sass/_generals.scss */
+/* line 153, ../sass/_generals.scss */
 #logo {
   display: block;
   width: 55%;
