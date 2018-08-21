@@ -1,14 +1,33 @@
 var button_login = document.querySelector('.button-login');
+var emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+
+var data;
+
+window.onload = function(){
+  loadData('https://jsonplaceholder.typicode.com/users');
+}
+function loadData(url) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+          data = JSON.parse(this.responseText);
+     }
+    
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send(); 
+}
+
 // This is the important part!
 function mediaDesktop(x) {
   if (x.matches) { // If media query matches
-      document.body.style.backgroundColor = "yellow";
+    document.querySelector('.bg-login-desktop').style.display = 'none';
   } else {
-      document.body.style.backgroundColor = "pink";
+    document.querySelector('.bg-login-desktop').style.display = 'initial';    
   }
 }
 
-var x = window.matchMedia("(min-width: 469px)")
+var x = window.matchMedia("(max-width: 469px)")
 mediaDesktop(x) // Call listener function at run time
 x.addListener(mediaDesktop)
 
@@ -61,11 +80,22 @@ function collapseSection(element) {
   button_login.addEventListener('click', function(e) {
     var section = document.querySelector('.part.collapsible');
     var isCollapsed = section.getAttribute('data-collapsed') === 'true';
+    var email = document.querySelector('input[text]').value;
+    var id = document.querySelector('input[number]').value;
       
     if(isCollapsed) {
       expandSection(section)
       section.setAttribute('data-collapsed', 'false')
     } else {
       collapseSection(section)
+    }
+
+    for(var i=0;i<data.length;i++){
+      if(emailRegex.test(email.value)){
+        if(data[i].email.value==email.value && data[i].id.value==id.value){
+          location.replace('http://127.0.0.1:5500/admin.html');
+          document.querySelector('.admin-header h4').value = data[i].name;
+        }
+      }
     }
   });

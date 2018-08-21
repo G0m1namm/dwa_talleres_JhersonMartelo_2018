@@ -5,14 +5,16 @@
 }
 
 /* line 6, ../sass/_generals.scss */
-body {
+body, html {
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100%;
   font-family: 'Varela Round', sans-serif;
   font-family: 'Montserrat', sans-serif;
 }
 
-/* line 13, ../sass/_generals.scss */
+/* line 15, ../sass/_generals.scss */
 .bg-login-mobile {
   position: absolute;
   top: 0;
@@ -20,25 +22,25 @@ body {
   bottom: 0;
   left: 0;
 }
-/* line 20, ../sass/_generals.scss */
+/* line 22, ../sass/_generals.scss */
 .bg-login-mobile img {
   background-size: cover;
   width: min-content;
   transform: translateY(-200px);
 }
 
-/* line 27, ../sass/_generals.scss */
+/* line 29, ../sass/_generals.scss */
 .bg-login-desktop {
   position: absolute;
 }
-/* line 31, ../sass/_generals.scss */
+/* line 33, ../sass/_generals.scss */
 .bg-login-desktop img {
   background-size: contain;
   width: fit-content;
   transform: translateY(-30%);
 }
 
-/* line 37, ../sass/_generals.scss */
+/* line 39, ../sass/_generals.scss */
 .container-logo,
 .form-logo-desktop {
   position: relative;
@@ -46,7 +48,7 @@ body {
   transition: all .7s ease-in-out;
   padding-top: 90px;
 }
-/* line 44, ../sass/_generals.scss */
+/* line 46, ../sass/_generals.scss */
 .container-logo .part,
 .form-logo-desktop .part {
   overflow: hidden;
@@ -54,7 +56,7 @@ body {
   height: auto;
 }
 
-/* line 53, ../sass/_generals.scss */
+/* line 55, ../sass/_generals.scss */
 .button-login {
   position: relative;
   -moz-box-shadow: 0px 2px 14px -3px #3A25A3;
@@ -85,7 +87,7 @@ body {
   text-shadow: 0px 1px 50px #3d768a;
   transition: letter-spacing .6s all ease;
 }
-/* line 83, ../sass/_generals.scss */
+/* line 85, ../sass/_generals.scss */
 .button-login:hover {
   background: -moz-linear-gradient(top, #593ef0 1%, #e17ff0 100%);
   background: -webkit-linear-gradient(top, #593ef0 1%, #e17ff0 100%);
@@ -95,25 +97,25 @@ body {
   background-color: #593ef0;
 }
 
-/* line 93, ../sass/_generals.scss */
+/* line 95, ../sass/_generals.scss */
 .button-login:active {
   position: relative;
   letter-spacing: 2px;
 }
 
-/* line 97, ../sass/_generals.scss */
+/* line 99, ../sass/_generals.scss */
 .form-logo,
 .form-logo-desktop {
   width: 80%;
   margin: 0 auto;
 }
-/* line 102, ../sass/_generals.scss */
+/* line 104, ../sass/_generals.scss */
 .form-logo form,
 .form-logo-desktop form {
   text-align: center;
 }
 
-/* line 106, ../sass/_generals.scss */
+/* line 108, ../sass/_generals.scss */
 label {
   display: block;
   letter-spacing: 4px;
@@ -121,7 +123,7 @@ label {
   text-align: center;
   font-family: 'Varela Round';
 }
-/* line 113, ../sass/_generals.scss */
+/* line 115, ../sass/_generals.scss */
 label .label-text {
   color: #3A25A3;
   cursor: text;
@@ -134,7 +136,7 @@ label .label-text {
   transform: translateY(-34px);
   transition: all 0.6s;
 }
-/* line 125, ../sass/_generals.scss */
+/* line 127, ../sass/_generals.scss */
 label input {
   background-color: transparent;
   border: 0;
@@ -149,43 +151,43 @@ label input {
   transition: all 0.6s ease;
   width: 200px;
 }
-/* line 139, ../sass/_generals.scss */
+/* line 141, ../sass/_generals.scss */
 label input:focus {
   max-width: 100%;
   width: 300px;
   border-radius: 14px;
 }
-/* line 144, ../sass/_generals.scss */
+/* line 146, ../sass/_generals.scss */
 label input:focus + .label-text {
   color: #3A25A3;
   font-size: 13px;
   letter-spacing: 5px;
   transform: translateY(-64px);
 }
-/* line 151, ../sass/_generals.scss */
+/* line 153, ../sass/_generals.scss */
 label input:valid {
   border-radius: 7px;
 }
-/* line 154, ../sass/_generals.scss */
+/* line 156, ../sass/_generals.scss */
 label input:valid + .label-text {
   font-size: 13px;
   letter-spacing: 5px;
   transform: translateY(-64px);
   opacity: 0.4;
 }
-/* line 161, ../sass/_generals.scss */
+/* line 163, ../sass/_generals.scss */
 label input:invalid {
   border-bottom: 3px solid #F50057;
   border-radius: 14px;
   color: #F50057;
 }
-/* line 166, ../sass/_generals.scss */
+/* line 168, ../sass/_generals.scss */
 label input[type="number"]::-webkit-inner-spin-button, label input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-/* line 175, ../sass/_generals.scss */
+/* line 177, ../sass/_generals.scss */
 #logo {
   display: block;
   width: 55%;
@@ -193,36 +195,217 @@ label input[type="number"]::-webkit-inner-spin-button, label input[type="number"
 }
 
 @media only screen and (min-width: 469px) {
-  /* line 182, ../sass/_generals.scss */
+  /* line 184, ../sass/_generals.scss */
   .bg-login-mobile {
     display: none;
   }
 
-  /* line 186, ../sass/_generals.scss */
+  /* line 188, ../sass/_generals.scss */
   .container-logo {
     width: 100%;
     padding-top: 10px;
   }
-  /* line 190, ../sass/_generals.scss */
+  /* line 192, ../sass/_generals.scss */
   .container-logo .button-login-desktop {
     float: right;
     margin: 25px 25px 35px 0;
   }
-  /* line 195, ../sass/_generals.scss */
+  /* line 197, ../sass/_generals.scss */
   .container-logo .button-login-mobile {
     display: none;
   }
 
-  /* line 199, ../sass/_generals.scss */
+  /* line 201, ../sass/_generals.scss */
   .form-logo {
     display: none;
   }
 
-  /* line 273, ../sass/_generals.scss */
+  /* line 205, ../sass/_generals.scss */
   #logo {
     max-width: 17%;
     min-width: 180px;
     margin-left: 10px;
     float: left;
   }
+}
+/* line 215, ../sass/_generals.scss */
+body#admin {
+  overflow: auto;
+  background-color: #ffffff;
+}
+
+/* line 220, ../sass/_generals.scss */
+header {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+  position: sticky;
+}
+/* line 226, ../sass/_generals.scss */
+header img {
+  max-width: 17%;
+  min-width: 180px;
+  margin-left: 10px;
+  float: left;
+}
+/* line 232, ../sass/_generals.scss */
+header .admin-header {
+  float: right;
+}
+/* line 235, ../sass/_generals.scss */
+header h4 {
+  font-family: 'Montserrat';
+  text-transform: uppercase;
+  margin: 40px 25px 35px 0;
+  float: left;
+}
+/* line 241, ../sass/_generals.scss */
+header .sign-out {
+  float: right;
+  margin: 25px 25px 35px 0;
+}
+
+@media only screen and (max-width: 469px) {
+  /* line 247, ../sass/_generals.scss */
+  header {
+    position: relative;
+    display: block;
+  }
+  /* line 250, ../sass/_generals.scss */
+  header img {
+    align-self: center;
+    margin-left: 25%;
+  }
+}
+/* line 257, ../sass/_generals.scss */
+.container-cards {
+  position: relative;
+  display: block;
+  overflow-y: auto;
+  width: 95%;
+  height: 100%;
+  background-color: #593ef0;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 1px -1px 8px #3A25A3;
+}
+/* line 268, ../sass/_generals.scss */
+.container-cards #container-tittle {
+  margin-left: 30px;
+  width: 100%;
+  color: #C7DDF8;
+  text-shadow: 1px 1px 4px #3A25A3;
+}
+/* line 275, ../sass/_generals.scss */
+.container-cards .wrapper-cards {
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+  height: fit-content;
+  align-self: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding-bottom: 20px;
+}
+
+/* line 288, ../sass/_generals.scss */
+.card {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  margin: 10px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: calc(100% / 4);
+  min-width: 320px;
+  height: 250px;
+  padding: 20px;
+  background: #252525;
+  border-radius: 10px;
+  box-shadow: -2px 2px 0px 0px #202020, -10px 10px 40px 0px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  transition: all 1s;
+}
+/* line 309, ../sass/_generals.scss */
+.card h2 {
+  width: fit-content;
+  opacity: 0;
+  transition: all .4s ease;
+}
+/* line 314, ../sass/_generals.scss */
+.card:hover {
+  width: calc(100% / 3)10px;
+  height: 290px;
+}
+/* line 317, ../sass/_generals.scss */
+.card:hover h2 {
+  opacity: 1;
+  color: #F50057;
+}
+/* line 323, ../sass/_generals.scss */
+.card .circle {
+  position: absolute;
+  display: block;
+  margin: 20px;
+  top: 40%;
+  bottom: 0;
+  right: -30%;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: #202020;
+  z-index: -2;
+}
+/* line 336, ../sass/_generals.scss */
+.card .circle h4 {
+  position: absolute;
+  display: block;
+  width: fit-content;
+  margin: 0;
+  margin-left: 2rem;
+  bottom: 50%;
+  left: 0;
+  color: crimson;
+}
+/* line 346, ../sass/_generals.scss */
+.card .circle:nth-of-type(2) {
+  position: absolute;
+  cursor: pointer;
+  display: block;
+  width: 50px;
+  top: 0;
+  right: 0;
+  height: 50px;
+  z-index: -1;
+  background: crimson;
+}
+/* line 357, ../sass/_generals.scss */
+.card .circle:nth-of-type(2) h3 {
+  position: relative;
+  display: block;
+  margin-top: 25%;
+  margin-bottom: 25%;
+  text-align: center;
+}
+
+/* line 369, ../sass/_generals.scss */
+.button-add {
+  position: fixed;
+  display: block;
+  font-size: 2rem;
+  margin: 0;
+  padding: 0;
+  bottom: 5px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  align-self: center;
+  justify-content: center;
+  z-index: 4;
 }

@@ -3,9 +3,11 @@
     overflow: hidden;
 }
 
-body{
+body,html{
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 100%;
     font-family: 'Varela Round', sans-serif;
     font-family: 'Montserrat', sans-serif;
 }
@@ -199,77 +201,7 @@ label {
     .form-logo{
        display: none;
     }
-    // .form-logo-desktop{
-    //     position: relative;
-    //     label {
-    //         display: block;
-    //         letter-spacing: 4px;
-    //         padding-top: 30px;
-    //         text-align: center;
-    //         font-family: 'Varela Round';
-          
-    //         .label-text{
-    //           color: #3A25A3;
-    //           cursor: text;
-    //           font-size: .7em;
-    //           font-style: bold;
-    //           font-weight: 600;
-    //           line-height: 20px;
-    //           letter-spacing: 2px;
-    //           text-transform: uppercase;
-    //           transform:translateY(-34px);
-    //           transition: all 0.6s;
-    //         }
-    //         input{
-    //           background-color: transparent;
-    //           border: 0;
-    //           border-radius: 0;
-    //           border-bottom: 2px solid #e17ff0;
-    //           color: #3A25A3;
-    //           font-size: 1.2em;
-    //           letter-spacing: -1px;
-    //           outline: 0;
-    //           padding: 5px 30px;
-    //           text-align: center;
-    //           transition: all 0.6s ease;
-    //           width: 200px;
-              
-    //           &:focus{ 
-    //             max-width: 100%;
-    //             width: 300px;
-    //             border-radius: 14px;
-          
-    //             & + .label-text{
-    //               color: #3A25A3;
-    //               font-size: 13px;
-    //               letter-spacing: 5px;
-    //               transform:translateY(-64px);
-    //             }
-    //           }
-    //           &:valid{
-    //               border-radius: 7px;
-          
-    //               & + .label-text{
-    //                   font-size: 13px;
-    //                   letter-spacing: 5px;
-    //                   transform:translateY(-64px);
-    //                   opacity: 0.4;
-    //               }
-    //           }
-    //           &:invalid{
-    //               border-bottom: 3px solid #F50057;
-    //               border-radius: 14px;
-    //               color: #F50057;
-    //           }
-    //           &[type="number"]::-webkit-inner-spin-button,
-    //           &[type="number"]::-webkit-outer-spin-button{
-    //               -webkit-appearance: none; 
-    //                margin: 0;    
-    //           }
-             
-    //         }
-    //       }
-    // }
+
     #logo{
         max-width: 17%;
         min-width: 180px;
@@ -278,3 +210,176 @@ label {
     }
     
 }
+
+// Start Admin css
+body#admin{
+    overflow: auto;
+    background-color: #ffffff;
+    
+}
+header{
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    position: sticky;
+
+    img{
+        max-width: 17%;
+        min-width: 180px;
+        margin-left: 10px;
+        float: left;
+    }
+    .admin-header{
+        float: right;
+    }
+    h4{
+        font-family: 'Montserrat';
+        text-transform: uppercase;
+        margin: 40px 25px 35px 0;        
+        float: left;
+    }
+    .sign-out{
+        float: right;
+        margin: 25px 25px 35px 0;        
+    }
+}
+@media only screen and (max-width:469px){
+    header{
+        position: relative;
+        display: block;
+        img{
+            align-self: center;
+            margin-left: 25%;
+        }
+    }
+}
+
+.container-cards{
+    position: relative;
+    display: block;
+    overflow-y: auto;
+    width: 95%;
+    height: 100%;
+    background-color: #593ef0;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 1px -1px 8px #3A25A3;
+
+    #container-tittle{
+        margin-left: 30px;
+        width: 100%;
+        color: #C7DDF8;
+        text-shadow: 1px 1px 4px #3A25A3;
+    }
+    
+    .wrapper-cards{
+        display: flex;
+        margin: 0 auto;
+        width: 100%;
+        height: fit-content;
+        align-self: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        flex-direction: row;
+        padding-bottom: 20px;
+    }
+}
+
+.card {
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    margin: 10px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    max-width: calc(100% / 4);
+    min-width: 320px;
+    height: 250px;
+    padding: 20px;
+    background: #252525;
+    border-radius: 10px;
+    box-shadow: -2px 2px 0px 0px #202020,
+                -10px 10px 40px 0px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    transition: all 1s;
+    
+    h2{
+        width: fit-content;
+        opacity: 0;
+        transition: all .4s ease;
+    }
+    &:hover{
+        width: calc(100% / 3) + 10px;
+        height: 290px;
+        h2{
+            opacity: 1;
+            color: #F50057
+        }
+    }
+
+    .circle {
+        position: absolute;
+        display: block;
+        margin: 20px;
+        top: 40%;
+        bottom: 0;
+        right: -30%;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: #202020;
+        z-index: -2;
+
+        h4{
+            position: absolute;
+            display: block;
+            width: fit-content;
+            margin: 0;
+            margin-left: 2rem;
+            bottom: 50%;
+            left: 0;
+            color: crimson;
+        }
+        &:nth-of-type(2) {
+            position: absolute;
+            cursor: pointer;
+            display: block;
+            width: 50px;
+            top: 0;
+            right: 0;
+            height: 50px;
+            z-index: -1;
+            background: crimson;
+
+            h3{
+                position: relative;
+                display: block;
+                margin-top: 25%;
+                margin-bottom: 25%;
+                text-align: center;
+            }
+        }
+
+      }
+}
+
+.button-add{
+    position: fixed;
+    display: block;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+    bottom: 5px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    align-self: center;
+    justify-content: center;
+    z-index: 4;
+}
+// End Admin css
