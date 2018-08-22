@@ -112,10 +112,11 @@ body, html {
 /* line 104, ../sass/_generals.scss */
 .form-logo form,
 .form-logo-desktop form {
+  margin-top: 20px;
   text-align: center;
 }
 
-/* line 108, ../sass/_generals.scss */
+/* line 109, ../sass/_generals.scss */
 label {
   display: block;
   letter-spacing: 4px;
@@ -123,7 +124,7 @@ label {
   text-align: center;
   font-family: 'Varela Round';
 }
-/* line 115, ../sass/_generals.scss */
+/* line 116, ../sass/_generals.scss */
 label .label-text {
   color: #3A25A3;
   cursor: text;
@@ -136,7 +137,7 @@ label .label-text {
   transform: translateY(-34px);
   transition: all 0.6s;
 }
-/* line 127, ../sass/_generals.scss */
+/* line 128, ../sass/_generals.scss */
 label input {
   background-color: transparent;
   border: 0;
@@ -151,43 +152,44 @@ label input {
   transition: all 0.6s ease;
   width: 200px;
 }
-/* line 141, ../sass/_generals.scss */
+/* line 142, ../sass/_generals.scss */
 label input:focus {
   max-width: 100%;
   width: 300px;
   border-radius: 14px;
 }
-/* line 146, ../sass/_generals.scss */
+/* line 147, ../sass/_generals.scss */
 label input:focus + .label-text {
   color: #3A25A3;
   font-size: 13px;
   letter-spacing: 5px;
   transform: translateY(-64px);
 }
-/* line 153, ../sass/_generals.scss */
+/* line 154, ../sass/_generals.scss */
 label input:valid {
   border-radius: 7px;
 }
-/* line 156, ../sass/_generals.scss */
+/* line 157, ../sass/_generals.scss */
 label input:valid + .label-text {
   font-size: 13px;
   letter-spacing: 5px;
   transform: translateY(-64px);
   opacity: 0.4;
 }
-/* line 163, ../sass/_generals.scss */
-label input:invalid {
-  border-bottom: 3px solid #F50057;
-  border-radius: 14px;
-  color: #F50057;
-}
-/* line 168, ../sass/_generals.scss */
+/* line 165, ../sass/_generals.scss */
 label input[type="number"]::-webkit-inner-spin-button, label input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-/* line 177, ../sass/_generals.scss */
+/* line 173, ../sass/_generals.scss */
+label input.invalid {
+  border-bottom: 3px solid #F50057;
+  border-radius: 14px;
+  color: #F50057;
+}
+
+/* line 178, ../sass/_generals.scss */
 #logo {
   display: block;
   width: 55%;
@@ -195,32 +197,32 @@ label input[type="number"]::-webkit-inner-spin-button, label input[type="number"
 }
 
 @media only screen and (min-width: 469px) {
-  /* line 184, ../sass/_generals.scss */
+  /* line 185, ../sass/_generals.scss */
   .bg-login-mobile {
     display: none;
   }
 
-  /* line 188, ../sass/_generals.scss */
+  /* line 189, ../sass/_generals.scss */
   .container-logo {
     width: 100%;
     padding-top: 10px;
   }
-  /* line 192, ../sass/_generals.scss */
+  /* line 193, ../sass/_generals.scss */
   .container-logo .button-login-desktop {
     float: right;
     margin: 25px 25px 35px 0;
   }
-  /* line 197, ../sass/_generals.scss */
+  /* line 198, ../sass/_generals.scss */
   .container-logo .button-login-mobile {
     display: none;
   }
 
-  /* line 201, ../sass/_generals.scss */
+  /* line 202, ../sass/_generals.scss */
   .form-logo {
     display: none;
   }
 
-  /* line 205, ../sass/_generals.scss */
+  /* line 206, ../sass/_generals.scss */
   #logo {
     max-width: 17%;
     min-width: 180px;
@@ -228,56 +230,49 @@ label input[type="number"]::-webkit-inner-spin-button, label input[type="number"
     float: left;
   }
 }
-/* line 215, ../sass/_generals.scss */
+/* line 216, ../sass/_generals.scss */
 body#admin {
   overflow: auto;
   background-color: #ffffff;
 }
 
-/* line 220, ../sass/_generals.scss */
+/* line 221, ../sass/_generals.scss */
 header {
   width: 100%;
   height: auto;
   display: inline-block;
   position: sticky;
 }
-/* line 226, ../sass/_generals.scss */
+/* line 227, ../sass/_generals.scss */
 header img {
   max-width: 17%;
   min-width: 180px;
   margin-left: 10px;
   float: left;
 }
-/* line 232, ../sass/_generals.scss */
+/* line 233, ../sass/_generals.scss */
 header .admin-header {
   float: right;
 }
-/* line 235, ../sass/_generals.scss */
-header h4 {
-  font-family: 'Montserrat';
-  text-transform: uppercase;
-  margin: 40px 25px 35px 0;
-  float: left;
-}
-/* line 241, ../sass/_generals.scss */
+/* line 237, ../sass/_generals.scss */
 header .sign-out {
   float: right;
   margin: 25px 25px 35px 0;
 }
 
 @media only screen and (max-width: 469px) {
-  /* line 247, ../sass/_generals.scss */
+  /* line 243, ../sass/_generals.scss */
   header {
     position: relative;
     display: block;
   }
-  /* line 250, ../sass/_generals.scss */
+  /* line 246, ../sass/_generals.scss */
   header img {
     align-self: center;
     margin-left: 25%;
   }
 }
-/* line 257, ../sass/_generals.scss */
+/* line 253, ../sass/_generals.scss */
 .container-cards {
   position: relative;
   display: block;
@@ -289,14 +284,14 @@ header .sign-out {
   border-radius: 8px;
   box-shadow: 1px -1px 8px #3A25A3;
 }
-/* line 268, ../sass/_generals.scss */
+/* line 264, ../sass/_generals.scss */
 .container-cards #container-tittle {
   margin-left: 30px;
   width: 100%;
   color: #C7DDF8;
   text-shadow: 1px 1px 4px #3A25A3;
 }
-/* line 275, ../sass/_generals.scss */
+/* line 271, ../sass/_generals.scss */
 .container-cards .wrapper-cards {
   display: flex;
   margin: 0 auto;
@@ -309,7 +304,7 @@ header .sign-out {
   padding-bottom: 20px;
 }
 
-/* line 288, ../sass/_generals.scss */
+/* line 284, ../sass/_generals.scss */
 .card {
   display: flex;
   position: relative;
@@ -330,23 +325,23 @@ header .sign-out {
   z-index: 2;
   transition: all 1s;
 }
-/* line 309, ../sass/_generals.scss */
+/* line 305, ../sass/_generals.scss */
 .card h2 {
   width: fit-content;
   opacity: 0;
   transition: all .4s ease;
 }
-/* line 314, ../sass/_generals.scss */
+/* line 310, ../sass/_generals.scss */
 .card:hover {
   width: calc(100% / 3)10px;
   height: 290px;
 }
-/* line 317, ../sass/_generals.scss */
+/* line 313, ../sass/_generals.scss */
 .card:hover h2 {
   opacity: 1;
   color: #F50057;
 }
-/* line 323, ../sass/_generals.scss */
+/* line 319, ../sass/_generals.scss */
 .card .circle {
   position: absolute;
   display: block;
@@ -360,7 +355,7 @@ header .sign-out {
   background: #202020;
   z-index: -2;
 }
-/* line 336, ../sass/_generals.scss */
+/* line 332, ../sass/_generals.scss */
 .card .circle h4 {
   position: absolute;
   display: block;
@@ -371,7 +366,7 @@ header .sign-out {
   left: 0;
   color: crimson;
 }
-/* line 346, ../sass/_generals.scss */
+/* line 342, ../sass/_generals.scss */
 .card .circle:nth-of-type(2) {
   position: absolute;
   cursor: pointer;
@@ -383,7 +378,7 @@ header .sign-out {
   z-index: -1;
   background: crimson;
 }
-/* line 357, ../sass/_generals.scss */
+/* line 353, ../sass/_generals.scss */
 .card .circle:nth-of-type(2) h3 {
   position: relative;
   display: block;
@@ -392,7 +387,7 @@ header .sign-out {
   text-align: center;
 }
 
-/* line 369, ../sass/_generals.scss */
+/* line 365, ../sass/_generals.scss */
 .button-add {
   position: fixed;
   display: block;

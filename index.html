@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>MyIllustrations</title>
+    <link rel="shortcut icon" href="/img/logo-contrast.png" type="image/x-icon">
     <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Varela+Round" rel="stylesheet">
 
@@ -18,18 +19,18 @@
     </div>
     
     <div class="container-logo">
-        <img id="logo" class="part" src="/img/logo.png" alt="">
+        <img id="logo" class="part" src="img/logo-contrast.png" alt="">
 
         <a href="#" class="button-login button-login-desktop">Login</a>
         <!-- Form login -->
-        <div class="form-logo part collapsible" data-collapsed="false">
+        <div class="form-logo part" data-collapsed="false">
             <form>
                 <label>
-                    <input type="text" required />
+                    <input id="input-mobile" class="input-email"type="text" required />
                     <div class="label-text">Correo</div>
                 </label>
                 <label>
-                    <input type="number" required />
+                    <input class="input-id" type="number" required />
                     <div class="label-text">ID</div>
                 </label>
             </form>
@@ -39,11 +40,11 @@
     <div class="form-logo-desktop part collapsible" data-collapsed="false">
             <form>
                 <label>
-                    <input type="text" required />
+                    <input id="input-desktop" class="input-email" type="text" required />
                     <div class="label-text">Correo</div>
                 </label>
                 <label>
-                    <input type="number" required />
+                    <input class="input-id" type="number" required />
                     <div class="label-text">ID</div>
                 </label>
             </form>

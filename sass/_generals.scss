@@ -102,6 +102,7 @@ body,html{
     margin: 0 auto;
 
     form{
+        margin-top: 20px;
         text-align: center;
     }
 }
@@ -160,11 +161,7 @@ label {
             opacity: 0.4;
         }
     }
-    &:invalid{
-        border-bottom: 3px solid #F50057;
-        border-radius: 14px;
-        color: #F50057;
-    }
+    
     &[type="number"]::-webkit-inner-spin-button,
     &[type="number"]::-webkit-outer-spin-button{
         -webkit-appearance: none; 
@@ -173,7 +170,11 @@ label {
    
   }
 }
-
+label input.invalid{
+    border-bottom: 3px solid #F50057;
+    border-radius: 14px;
+    color: #F50057;
+}
 #logo{
     display: block;
     width: 55%;
@@ -232,12 +233,7 @@ header{
     .admin-header{
         float: right;
     }
-    h4{
-        font-family: 'Montserrat';
-        text-transform: uppercase;
-        margin: 40px 25px 35px 0;        
-        float: left;
-    }
+    
     .sign-out{
         float: right;
         margin: 25px 25px 35px 0;        
