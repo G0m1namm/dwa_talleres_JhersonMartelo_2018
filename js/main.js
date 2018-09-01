@@ -20,6 +20,8 @@ function loadData(url) {
 }
 
 function mediaDesktop(x) {
+  var card = document.querySelector('.card');
+  
   if (x.matches) {
     document.querySelector('.bg-login-desktop').style.display = 'none';
     document.querySelector('.button-login-desktop').style.display = 'none';
