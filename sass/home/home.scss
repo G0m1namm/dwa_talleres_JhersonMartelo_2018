@@ -1,0 +1,57 @@
+main.container{
+    position: relative;
+    height:200vh;   
+    margin: 1rem;
+    background-color:#ACD4D8;
+    -webkit-box-shadow: 0px 0px 4px 1px rgba(34,157,168,1);
+    -moz-box-shadow: 0px 0px 4px 1px rgba(34,157,168,1);
+    box-shadow: 0px 0px 4px 1px rgba(34,157,168,1),
+                inset 4px -4px 8px 0px #fff;
+    
+    &::after{
+        content: '';
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+        width: 100%;
+        height: $height-pokedex+2;
+        background-color: $pokedex-shadow;
+        border-radius: 0 0 22px 22px;
+        filter: blur(3px);
+
+    }
+    &::before{
+        content: '';
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        width: 100%;
+        height: $height-pokedex+2;
+        background-color: $pokedex-shadow;
+        border-radius:22px 22px 0 0 ;
+        filter: blur(3px);
+    }
+}
+header{
+    background-color: $pokedex-bgcolor;
+    top:0;
+    border-radius: 22px 22px 0 0;
+    -webkit-box-shadow: inset 10px 10px 25px 0px rgba(255,255,255,0.5),
+                        2px 2px 7px 1px #06444a;
+    -moz-box-shadow: inset 10px 10px 25px 0px rgba(255,255,255,0.5),
+                    2px 2px 7px 1px #06444a;
+    box-shadow: inset 10px 10px 25px 0px rgba(255,255,255,0.5),
+                2px 2px 7px 1px #06444a;
+
+}
+footer{
+    background-color: $pokedex-bgcolor;
+    bottom: 0;
+    border-radius: 0 0 22px 22px;
+    -webkit-box-shadow: inset 10px -10px 25px 0px rgba(255,255,255,0.5);
+    -moz-box-shadow: inset 10px -10px 25px 0px rgba(255,255,255,0.5);
+    box-shadow: inset 10px -10px 25px 0px rgba(255,255,255,0.5),
+                0px -2px 7px 1px #06444a;
+}

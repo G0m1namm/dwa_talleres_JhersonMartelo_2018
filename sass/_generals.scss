@@ -1,158 +1,33 @@
-*{
-    box-sizing: border-box;
-    overflow: hidden;
-}
-body{
-    margin: 0;
-    padding: 0;
-    font-family: 'Varela Round', sans-serif;
-    font-family: 'Montserrat', sans-serif;
-}
-.bg-login-mobile{
-    position: absolute;
-    overflow: hidden;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
 
-    img{
-        background-size: cover;
-        transform: translateY(-200px);
-    }
+@function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
 }
-.container-logo{
-    position: relative;
-    display: block;
-    transition: all .7s ease-in-out;
-    padding-top: 90px;
+  
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+    $u1: unit($min-vw);
+    $u2: unit($max-vw);
+    $u3: unit($min-font-size);
+    $u4: unit($max-font-size);
 
-    .part{
-        overflow:hidden;
-        transition: height 0.6s ease-out;
-        height:auto;
-    }
-}
-
-.button-login {
-    position: relative;
-	-moz-box-shadow: 0px 2px 14px -3px #3A25A3;
-	-webkit-box-shadow: 0px 2px 14px -3px #3A25A3;
-	box-shadow: 0px 2px 14px -3px #3A25A3;
-	background:-moz-linear-gradient(top, #e17ff0   1%, #593ef0 100%);
-	background:-webkit-linear-gradient(top, #e17ff0 1%, #593ef0 100%);
-	background:-o-linear-gradient(top, #e17ff0 1%, #593ef0 100%);
-	background:-ms-linear-gradient(top, #e17ff0 1%, #593ef0 100%);
-	background:linear-gradient(to bottom, #e17ff0 1%, #593ef0 100%);
-	background-color:#e17ff0;
-	-moz-border-radius:42px;
-	-webkit-border-radius:42px;
-	border-radius:40px;
-    display:block;
-    width: fit-content;
-    margin: 0 auto;
-    margin-top: 20%;
-    margin-bottom: 8px;
-	cursor: pointer;
-    color:#ffffff;
-    font-family: 'Varela Round';
-	font-size:0.8em;
-    font-weight:bold;
-    letter-spacing: 1px;
-	padding:13px 32px;
-	text-decoration:none;
-    text-shadow:0px 1px 50px #3d768a;
-    transition: letter-spacing .6s all ease;
-
-    &:hover{
-        background:-moz-linear-gradient(top, #593ef0 1%, #e17ff0 100%);
-        background:-webkit-linear-gradient(top, #593ef0 1%, #e17ff0 100%);
-        background:-o-linear-gradient(top, #593ef0 1%, #e17ff0 100%);
-        background:-ms-linear-gradient(top, #593ef0 1%, #e17ff0 100%);
-        background:linear-gradient(to bottom, #593ef0 1%, #e17ff0 100%);
-        background-color:#593ef0;
-    }
-}
-   
-.button-login:active {
-    position:relative;
-    letter-spacing: 2px;
-}
-.form-logo{
-    width: 80%;
-    margin: 0 auto;
-}
-
-form{
-    text-align: center;
-    margin-top: 60px;
-}
-label{
-  display: block;
-  letter-spacing: 4px;
-  padding-top: 30px;
-  text-align: center;
-  font-family: 'Varela Round';
-
-  .label-text{
-    color: #3A25A3;
-    cursor: text;
-    font-size: .7em;
-    font-style: bold;
-    font-weight: 600;
-    line-height: 20px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    transform:translateY(-34px);
-    transition: all 0.6s;
-  }
-  input{
-    background-color: transparent;
-    border: 0;
-    border-radius: 0;
-    border-bottom: 2px solid #e17ff0;
-    color: #3A25A3;
-    font-size: 1.2em;
-    letter-spacing: -1px;
-    outline: 0;
-    padding: 5px 30px;
-    text-align: center;
-    transition: all 0.6s ease;
-    width: 200px;
-    
-    &:focus{ 
-      max-width: 100%;
-      width: 300px;
-      border-radius: 14px;
-
-      & + .label-text{
-        color: #3A25A3;
-        font-size: 13px;
-        letter-spacing: 5px;
-        transform:translateY(-64px);
-      }
-    }
-    &:valid{
-        border-radius: 7px;
-
-        & + .label-text{
-            font-size: 13px;
-            letter-spacing: 5px;
-            transform:translateY(-64px);
-            opacity: 0.4;
+    @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+        & {
+            font-size: $min-font-size;
+            @media screen and (min-width: $min-vw) {
+                font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+            }
+            @media screen and (min-width: $max-vw) {
+                font-size: $max-font-size;
+            }
         }
     }
-    &:invalid{
-        border-bottom: 3px solid #F50057;
-        border-radius: 14px;
-        color: #F50057;
-    }
-   
-  }
-}       
-#logo{
-    display: block;
-    width: 55%;
-    margin: 0 auto;
-    // margin-bottom: 90%;
+}
+body, html{
+    @include fluid-type($min-screen, $max-screen, $min-font, $max-font);
+    box-sizing: border-box;
+}
+.fixed{
+    position: fixed;
+    left:0;
+    width: 100%;
+    height: $height-pokedex;
 }
