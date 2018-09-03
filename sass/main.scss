@@ -1,19 +1,20 @@
 
 
 // Reset de estilos
-// @import "com/general/normalize.scss";
+@import "com/general/normalize.scss";
 // @import "com/general/reset_estilos.scss";
 
 // Estilos Externos (p.ej. liberias externas) - (!)
 
 // Fuentes 
-// @import "com/general/fuentes.scss";
+@import "com/general/fuentes.scss";
 
 // Estilos Internos
 // @import "com/general/sprites.scss";
 // @import "com/general/utilidades.scss";
+@import "com/general/variables.scss";
 @import "generals.scss";
-// @import "home/home.scss";
+@import "home/home.scss";
 
 
 
