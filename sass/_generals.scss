@@ -21,13 +21,142 @@
         }
     }
 }
+
 body, html{
     @include fluid-type($min-screen, $max-screen, $min-font, $max-font);
     box-sizing: border-box;
+
 }
+
 .fixed{
     position: fixed;
     left:0;
     width: 100%;
     height: $height-pokedex;
+}
+.typebug {
+    @extend .sprite_1-bug;
+
+    // @media only screen and (max-width: 600px) {
+    //     & { transform: scale(1.5); }
+    // }
+}
+.typedark {
+    @extend .sprite_1-dark;
+
+    // @media only screen and (max-width: 600px) {
+    //     & { transform: scale(1.5); }
+    // }
+}
+.typedragon {
+    @extend .sprite_1-dragon;
+
+    // @media only screen and (max-width: 600px) {
+    //     & { transform: scale(1.5); }
+    // }
+}
+.typeelectric {
+    @extend .sprite_1-electric;
+
+    // @media only screen and (max-width: 600px) {
+    //     & { transform: scale(1.5); }
+    // }
+}
+.typefairy {
+    @extend .sprite_1-fairy;
+
+    // @media only screen and (max-width: 600px) {
+    //     & { transform: scale(1.5); }
+    // }
+}
+.typefighting {
+    @extend .sprite_1-fighting;
+
+    // @media only screen and (max-width: 600px) {
+    //     & { transform: scale(1.5); }
+    // }
+}
+.typefire {
+    @extend .sprite_1-fire;
+
+    // @media only screen and (max-width: 600px) {
+    //     & { transform: scale(1.5); }
+    // }
+}
+.typeflying {
+    @extend .sprite_1-flying;
+
+    // @media only screen and (max-width: 600px) {
+    //     & { transform: scale(1.5); }
+    // }
+}
+.typeghost {
+    @extend .sprite_1-ghost;
+
+    // @media only screen and (max-width: 600px) {
+    //     & { transform: scale(1.5); }
+    // }
+}
+.typegrass {
+    @extend .sprite_1-grass;
+
+    // @media only screen and (max-width: 600px) {
+    //     & { transform: scale(1.5); }
+    // }
+}
+.typeground {
+    @extend .sprite_1-ground;
+
+    // @media only screen and (max-width: 600px) {
+    //     & { transform: scale(1.5); }
+    // }
+}
+.typeice {
+    @extend .sprite_1-ice;
+
+    // @media only screen and (max-width: 600px) {
+    //     & { transform: scale(1.5); }
+    // }
+}
+.typenormal {
+    @extend .sprite_1-normal;
+
+    // @media only screen and (max-width: 600px) {
+    //     & { transform: scale(1.5); }
+    // }
+}
+.typepoison {
+    @extend .sprite_1-poison;
+
+    // @media only screen and (max-width: 600px) {
+    //     & { transform: scale(1.5); }
+    // }
+}
+.typepsychic {
+    @extend .sprite_1-psychic;
+
+    // @media only screen and (max-width: 600px) {
+    //     & { transform: scale(1.5); }
+    // }
+}
+.typerock {
+    @extend .sprite_1-rock;
+
+    // @media only screen and (max-width: 600px) {
+    //     & { transform: scale(1.5); }
+    // }
+}
+.typesteel {
+    @extend .sprite_1-steel;
+
+    // @media only screen and (max-width: 600px) {
+    //     & { transform: scale(1.5); }
+    // }
+}
+.typewater {
+    @extend .sprite_1-water;
+
+    // @media only screen and (max-width: 600px) {
+    //     & { transform: scale(1.5); }
+    // }
 }
