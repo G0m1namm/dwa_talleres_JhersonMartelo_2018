@@ -1,8 +1,3 @@
-
-var pokemon;
-var sprite_pokemon;
-var pokemon_info = document.getElementsByClassName('pokemon-img');
-
 function createCORSRequest(method, url) {
     var xhr = new XMLHttpRequest();
     if ("withCredentials" in xhr) {
@@ -74,6 +69,6 @@ $.ajax({
         $(".ability").html(ability);
         $(".weight").html(weight);
         $(".height").html(height);
-    } //SUCCESS
+    } 
     
-}); //AJAX
+});
