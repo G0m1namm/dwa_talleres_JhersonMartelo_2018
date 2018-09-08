@@ -128,42 +128,43 @@ section.wrapper{
     background-color: $pokedex-infoColor;
     margin-top: $height-pokedex;
 }
-.pokemon-card{
-    z-index: 4;
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: fit-content;
-    & .pokemon-name h2{
-        position: absolute;
-        font-family: 'PokemonGb';
-        width: 50vw;
-        margin: 3rem 0;
-    }
-    & .pokemon-type{
-        position: absolute;
-        margin: 0;
-        float: right;
-        transform: scale(0.1);
-    }
-}
-.pokemon-info{
-    position: relative;
-    display: block;
-    width: 100%;
-    height:fit-content;
-    margin-top: 100rem;
+// .pokemon-card{
+//     z-index: 4;
+//     position: absolute;
+//     display: block;
+//     width: 100%;
+//     height: 100%;
+//     background-color: $pokeRed;
+//     & .pokemon-name h2{
+//         position: absolute;
+//         font-family: 'PokemonGb';
+//         width: 50vw;
+//         margin: 3rem 0;
+//     }
+//     & .pokemon-type{
+//         position: absolute;
+//         margin: 0;
+//         float: right;
+//         transform: scale(0.1);
+//     }
+// }
+// .pokemon-info{
+//     position: relative;
+//     display: block;
+//     width: 100%;
+//     height:fit-content;
+//     margin-top: 100rem;
 
-    // & img{
-    //     display: flex;
-    //     justify-content: center;
-    //     width: 60%;
-    //     background-size: cover;
-    //     background-repeat: no-repeat;
-    //     margin: 0 auto;
-    //     padding: 0;
-    // }
-}
+//     & img{
+//         display: flex;
+//         justify-content: center;
+//         width: 60%;
+//         background-size: cover;
+//         background-repeat: no-repeat;
+//         margin: 0 auto;
+//         padding: 0;
+//     }
+// }
 
 footer{
     background-color: $pokedex-bgcolor;
@@ -226,67 +227,92 @@ footer.circle-shadow{
     padding:0;
     width: 100%;
     margin-top: 2rem;
-  }
-  #pokeImage {
+}
+#pokeImage {
     display: flex;
     justify-content: center;
     margin:0 auto;
     width: 100%;
     position: relative;
     transform: translateY(-10vh);
-  }
-  .base-title {
+}
+
+.base-title {
     font-size: 1.3rem;
     font-weight: 700;
-  }
-  .stat {
-    font-weight: 700;
-  }
-  .size {
+}
+
+.size {
     display: flex;
     justify-content: center;
 
-  }
+}
 
-  .poke-info {
-    display: inline-block;
-    margin-right: 2px;
-  }
-  
-  .container {
-    width: 450px;
-    margin-top: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #fff;
-    color: #000;
-    border-radius: 15px;
-    box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.75);
-  }
-  
-  .image-container {
+.image-container {
     height: 300px;
     background-color: transparent;
-    white-space: nowrap;
     border:0;
     color: #fff;
     font-size: 0.8rem;
-  }
+}
 
-  table {
+table {
     border-collapse: collapse;
     width: 100%;
     font-size: 0.8rem;
-  }
-  
-  td,
-  th {
+}
+tr td:first-child{
+    font-weight: 700;
+}
+td,
+th {
     border: 0;
     text-align: left;
     padding: 8px;
     text-transform: capitalize;
-  }
-  
-  tr:nth-child(even) {
+}
+
+tr:nth-child(even) {
     background-color: #E4F8F9;
-  }
+}
+
+@media only screen and (min-width: 600px) {
+    div#pokeOutput{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: max-content;
+        background-color: aqua;
+        
+        
+        & .bottom-container{
+            position: relative;
+            float: right;
+            width: 50%;
+        }
+    }
+    div.top-container{
+        position: relative;
+        float: left;
+        width: 50%;
+    }
+    div.image-container{
+        display: inline-block;
+        width: 95%;
+        border-right: 2px solid $pokedex-shadow;
+    }
+    img#pokeImage{
+        position: relative;
+        background-color: #E4F8F9;
+        height: 100%;
+    }
+    div.bottom-container{
+        position: absolute;
+        margin: 0 auto;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

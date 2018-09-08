@@ -45,7 +45,6 @@ function makeCorsRequest() {
 }
 
 var url = "https://pokeapi.co/api/v2/pokemon/1";
-    console.log(url);
 $.ajax({
     url: url,
     dataType: "json",
@@ -64,7 +63,7 @@ $.ajax({
             $(".type").html(type + " ");
             types.push(type);
         }
-        console.log(types);
+        // console.log(types);
 
         $(".size h2").html(name);
         $(".idNum").html(id);
@@ -77,3 +76,14 @@ $.ajax({
     } //SUCCESS
     
 }); //AJAX
+
+var url2 = "https://pokeapi.co/api/v2/pokemon-form/1";
+
+$.ajax({
+  url: url,
+  dataType: "json",
+  method: "GET",
+  success: function(data) {
+    var abi
+  }
+})

@@ -1,6 +1,6 @@
 /*
 Error: Undefined variable: "$glass".
-        on line 7 of E:/Universidad/Desarrollo web avanzado/dwa_talleres_JhersonMartelo_2018/sass/home/home.scss
+        on line 7 of E:/Universidad/Desarrollo web avanzado/dwa_talleres_JhersonMartelo_2018/Taller2/sass/home/home.scss
 
 2:     position: relative;
 3:     margin: 0 auto;
@@ -15,7 +15,7 @@ Error: Undefined variable: "$glass".
 12: 
 
 Backtrace:
-E:/Universidad/Desarrollo web avanzado/dwa_talleres_JhersonMartelo_2018/sass/home/home.scss:7
+E:/Universidad/Desarrollo web avanzado/dwa_talleres_JhersonMartelo_2018/Taller2/sass/home/home.scss:7
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/script/tree/variable.rb:49:in `_perform'
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/script/tree/node.rb:58:in `perform'
 C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:398:in `visit_prop'
@@ -67,4 +67,4 @@ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.4.25/vendor/listen/lib/listen/adap
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$glass\".\A         on line 7 of E:/Universidad/Desarrollo web avanzado/dwa_talleres_JhersonMartelo_2018/sass/home/home.scss\A \A 2:     position: relative;\A 3:     margin: 0 auto;\A 4:     width: 90%;\A 5:     height:140vh;\A 6:     font-family: 'PokemonGb';\A 7:     background-color: $glass;\A 8:     -webkit-box-shadow: 0px 0px 4px 1px rgba(34,157,168,1);\A 9:     -moz-box-shadow: 0px 0px 4px 1px rgba(34,157,168,1);\A 10:     box-shadow: 0px 0px 4px 1px rgba(34,157,168,1),\A 11:                 inset 0px -4px 18px 0px #fff;\A 12: "; }
+  content: "Error: Undefined variable: \"$glass\".\A         on line 7 of E:/Universidad/Desarrollo web avanzado/dwa_talleres_JhersonMartelo_2018/Taller2/sass/home/home.scss\A \A 2:     position: relative;\A 3:     margin: 0 auto;\A 4:     width: 90%;\A 5:     height:140vh;\A 6:     font-family: 'PokemonGb';\A 7:     background-color: $glass;\A 8:     -webkit-box-shadow: 0px 0px 4px 1px rgba(34,157,168,1);\A 9:     -moz-box-shadow: 0px 0px 4px 1px rgba(34,157,168,1);\A 10:     box-shadow: 0px 0px 4px 1px rgba(34,157,168,1),\A 11:                 inset 0px -4px 18px 0px #fff;\A 12: "; }
