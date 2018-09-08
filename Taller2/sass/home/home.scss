@@ -2,7 +2,7 @@ main.container{
     position: relative;
     margin: 0 auto;
     width: 90%;
-    height:140vh;
+    height:100vh;
     font-family: 'PokemonGb';
     background-color: $glass;
     -webkit-box-shadow: 0px 0px 4px 1px rgba(34,157,168,1);
@@ -124,9 +124,8 @@ section.wrapper{
     z-index: 1;
     margin: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: $pokedex-infoColor;
-    margin-top: $height-pokedex;
 }
 // .pokemon-card{
 //     z-index: 4;
@@ -278,11 +277,15 @@ tr:nth-child(even) {
 
 @media only screen and (min-width: 600px) {
     div#pokeOutput{
+
+        position: absolute;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: max-content;
-        background-color: aqua;
+        width: 100%;
+        height:-webkit-calc(100vh - #{$height-pokedex*2});
+        margin-top: $height-pokedex;
+        margin-bottom: $height-pokedex;        
         
         
         & .bottom-container{
@@ -303,7 +306,7 @@ tr:nth-child(even) {
     }
     img#pokeImage{
         position: relative;
-        background-color: #E4F8F9;
+        // background-color: #E4F8F9;
         height: 100%;
     }
     div.bottom-container{
