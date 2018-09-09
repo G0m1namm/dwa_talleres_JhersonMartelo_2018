@@ -69,7 +69,6 @@ function showPokemon(data){
     $(this).attr("alt",i+1);
   });
   
-  console.log("me estan cargando");
   
 }
 
@@ -78,7 +77,6 @@ function animationEvent(){
 
   $('footer').css({"height":"50vh","-webkit-box-shadow":"inset -10px 10px 20px 0px rgba(255,255,255,0.5),2px 2px 7px 1px #06444a", "-moz-box-shadow":"inset -10px 10px 20px 0px rgba(255,255,255,0.5),2px 2px 7px 1px #06444a", "box-shadow":"inset -10px -10px 20px 0px rgba(255,255,255,0.5)"});
 
-  console.log("me estan cerrando");  
 }
 
 function removeAnimationEvent(){
@@ -86,7 +84,6 @@ function removeAnimationEvent(){
 
   $('footer').css({"height":"125px","-webkit-box-shadow":"inset 10px -10px 25px 0px rgba(255,255,255,0.5)", "-moz-box-shadow":"inset 10px -10px 25px 0px rgba(255,255,255,0.5)", "box-shadow":"inset 10px -10px 25px 0px rgba(255,255,255,0.5)"});
 
-  console.log("me estan abriendo");
 }
 
 $(function() {
