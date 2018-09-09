@@ -1,7 +1,5 @@
 
-var pokemon;
-var sprite_pokemon;
-var pokemon_info = document.getElementsByClassName('pokemon-img');
+var pokemon_image = [];
 
 function createCORSRequest(method, url) {
     var xhr = new XMLHttpRequest();
@@ -44,36 +42,110 @@ function makeCorsRequest() {
     xhr.send();
 }
 
-var url = "https://pokeapi.co/api/v2/pokemon/1";
-    console.log(url);
-$.ajax({
+function showPokemon(data){
+  var name = data.forms[0].name,
+  pokeImgFront = data.sprites.front_default,
+  ability = data.abilities[0].ability.name,
+  lvl = data.stats[4].base_stat,
+  id = "#" + data.id,
+  weight =  data.weight,
+  height = data.height,
+  type = [];
+
+  for (var i = 0; i < data.types.length; i++) {
+      var type = data.types[i].type.name;
+      $(".type").html(type);
+  }
+  $(".size h2").html(name);
+  $(".idNum").html(id);
+  $("#pokeImage").attr("src", pokeImgFront);
+  $(".level").html(lvl);
+  $(".ability").html(ability);
+  $(".weight").html(weight);
+  $(".height").html(height);
+
+  $(".pokemon-thumb img").each(function(i){
+    $(this).attr("src","https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+(i+1)+".png");
+    $(this).attr("alt",i+1);
+  });
+  
+  
+}
+
+function animationEvent(){
+  $('header').css({"height":"50vh","-webkit-box-shadow":"inset -10px 10px 20px 0px rgba(255,255,255,0.5),2px 2px 7px 1px #06444a", "-moz-box-shadow":"inset -10px 10px 20px 0px rgba(255,255,255,0.5),2px 2px 7px 1px #06444a", "box-shadow":"inset -10px -10px 20px 0px rgba(255,255,255,0.5)"});
+
+  $('footer').css({"height":"50vh","-webkit-box-shadow":"inset -10px 10px 20px 0px rgba(255,255,255,0.5),2px 2px 7px 1px #06444a", "-moz-box-shadow":"inset -10px 10px 20px 0px rgba(255,255,255,0.5),2px 2px 7px 1px #06444a", "box-shadow":"inset -10px -10px 20px 0px rgba(255,255,255,0.5)"});
+
+}
+
+function removeAnimationEvent(){
+  $('header').css({"height":"125px","-webkit-box-shadow":"inset 10px 10px 25px 0px rgba(255,255,255,0.5),2px 2px 7px 1px #06444a", "-moz-box-shadow":"inset 10px 10px 25px 0px rgba(255,255,255,0.5),2px 2px 7px 1px #06444a", "box-shadow":"inset 10px 10px 25px 0px rgba(255,255,255,0.5),2px 2px 7px 1px #06444a"});
+
+  $('footer').css({"height":"125px","-webkit-box-shadow":"inset 10px -10px 25px 0px rgba(255,255,255,0.5)", "-moz-box-shadow":"inset 10px -10px 25px 0px rgba(255,255,255,0.5)", "box-shadow":"inset 10px -10px 25px 0px rgba(255,255,255,0.5)"});
+
+}
+
+$(function() {
+  var url = "https://pokeapi.co/api/v2/pokemon/1/";
+
+  $.ajax({
     url: url,
     dataType: "json",
     method: "GET",
     success: function(data) {
-        var name = data.forms[0].name,
-        pokeImgFront = data.sprites.front_default,
-        ability = data.abilities[0].ability.name,
-        lvl = data.stats[4].base_stat,
-        id = "#" + data.id,
-        weight =  data.weight,
-        height = data.height,
-        types = [];
-        for (var i = 0; i < data.types.length; i++) {
-            var type = data.types[i].type.name;
-            $(".type").html(type + " ");
-            types.push(type);
-        }
-        console.log(types);
-
-        $(".size h2").html(name);
-        $(".idNum").html(id);
-        $("#pokeImage").attr("src", pokeImgFront);
-        // $(".pokemon-type").addClass("type"+types[0]);
-        $(".level").html(lvl);
-        $(".ability").html(ability);
-        $(".weight").html(weight);
-        $(".height").html(height);
+        showPokemon(data);
     } //SUCCESS
     
-}); //AJAX
+  }); //AJAX
+
+  $('.pokemon-selection').slick({
+    centerMode: true,
+    centerPadding: '0px',
+    slidesToShow: 3,
+    responsive: [{
+      breakpoint: 768,
+      settings: {
+        arrows: true,
+        centerMode: true,
+        centerPadding: '0px',
+        slidesToShow: 2
+      }
+    }, {
+      breakpoint: 480,
+      settings: {
+        arrows: true,
+        centerMode: true,
+        centerPadding: '0px',
+        slidesToShow: 1
+      }
+    }],
+      adaptativeHeight:true
+  }); // $('.slick-carousel')
+  
+  $('.pokemon-thumb img').on('click', function(e) {
+      e.preventDefault();
+
+      url = "https://pokeapi.co/api/v2/pokemon/"+e.target.alt+"/";
+      animationEvent();
+
+      $.ajax({
+        url: url,
+        dataType: "json",
+        method: "GET",
+        success: function(data) {
+
+          setTimeout(showPokemon(data),2000);
+
+        } //SUCCESS
+        
+      }); //AJAX
+
+      setTimeout(removeAnimationEvent, 1500);
+      return false;
+  });
+  
+});
+
+
+
