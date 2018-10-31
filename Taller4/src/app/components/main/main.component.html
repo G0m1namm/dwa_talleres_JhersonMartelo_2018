@@ -1,0 +1,47 @@
+<section class="wrapper">
+    <div id="pokeOutput">
+        <div class="top-container">
+          <div class="image-container">
+    
+            <div class="size">
+              <h2>{{poke.name}}</h2>
+            </div>
+    
+            <img src="{{poke.sprites.front_default}}" alt="" id="pokeImage">
+          </div>
+        </div>
+    
+        <div class="bottom-container">
+    
+          <table>
+            <tr>
+              <td>NO: </td>
+              <td class="idNum"># {{poke.id}}</td>
+            </tr>
+            <tr>
+              <td>Level:</td>
+              <td class="level">{{poke.stats[4].base_stat}}</td>
+            </tr>
+            <tr>
+              <td>Type:</td>
+              <td class="type">{{poke.types[0].type.name}}</td>
+            </tr>
+            <tr>
+              <td>Ability:</td>
+              <td class="ability">{{poke.abilities[0].ability.name}}</td>
+            </tr>
+            <tr>
+              <td>Height:</td>
+              <td class="height">{{poke.weight}}</td>
+            </tr>
+            <tr>
+              <td>Weight:</td>
+              <td class="weight">{{poke.height}}</td>
+            </tr>
+          </table>
+
+
+        </div>
+
+    </div>
+</section>
