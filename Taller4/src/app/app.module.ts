@@ -6,6 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MainComponent } from './components/main/main.component';
+import { ListPokemonComponent } from './pages/list-pokemon/list-pokemon.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { MainComponent } from './components/main/main.component';
     HeaderComponent,
     FooterComponent,
     MainComponent,
+    ListPokemonComponent,
   ],
   imports: [
     BrowserModule
