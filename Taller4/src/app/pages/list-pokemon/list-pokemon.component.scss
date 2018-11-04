@@ -1,0 +1,538 @@
+@import '../../../sass/variables';
+@import '../../../sass/generals';
+@import '../../../sass/fuentes';
+
+section.wrapper{
+    position: absolute;
+    z-index: 1;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: $glass;
+}
+
+
+#pokeOutput {
+    position: absolute;
+    padding:0;
+    width: 100%;
+    height:-webkit-calc(100vh - #{$height-pokedex*2});
+    margin-top: $height-pokedex;
+    margin-bottom: $height-pokedex;        
+    overflow-x: hidden;
+
+    & div.image-container{
+        background-image: url(/img/bg-pokemon.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position-x: 50%;
+    }
+}
+#pokeImage {
+    display: flex;
+    justify-content: center;
+    margin:0 auto;
+    margin-top: 10%;
+    width: 100%;
+    position: relative;
+    transform: translateY(-10vh);
+
+    @media screen and (min-width:400px) and (max-width:600px) {
+        & {transform: translateY(-8vh)};
+    }
+}
+.size {
+    display: flex;
+    justify-content: center;
+
+    & h2 {
+        position: relative;
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        font-weight: 900;
+        text-decoration: none;
+        text-align: center;
+        font-size:1.2rem;
+        color: white;
+        background-size: 120% 100%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-background-clip: text;
+        -moz-text-fill-color: transparent;
+        -ms-background-clip: text;
+        -ms-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        background-image: linear-gradient(45deg, 
+                          $pokeBlue, 
+                          $pokeRed,
+                          $pokeBlue,
+                          $pokeYellow);
+        animation: .8s shake infinite alternate;
+      }
+      
+    @keyframes shake {
+        0% { transform: skewX(-15deg); }
+        5% { transform: skewX(15deg); }
+        10% { transform: skewX(-15deg); }
+        15% { transform: skewX(15deg); }
+        20% { transform: skewX(0deg); }
+        100% { transform: skewX(0deg); }  
+    }
+
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.8rem;
+}
+tr td:first-child{
+    font-weight: 700;
+}
+td,
+th {
+    border: 0;
+    text-align: left;
+    padding: 8px;
+    text-transform: capitalize;
+}
+
+tr:nth-child(even) {
+    background-color: #E4F8F9;
+}
+
+
+div.pokemon-selection{
+    position: relative;
+    display: block;
+    bottom: 0;
+    width: 100%;
+    height: 30%;
+    background-color: $pokedex-infoColor;
+    overflow:auto;
+    box-sizing: border-box;
+
+
+    & .pokemon-thumb{
+        max-height: -webkit-calc(100% - 0.8rem);
+        min-height: 150px;
+        width: (100% /3 );
+        margin: 0.4rem 0;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-right: 1px double $pokedex-shadow; 
+    }
+}
+
+div.pokemon-thumb img{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    float: left;
+}
+
+.slick-prev:before,
+.slick-next:before {
+color: black;
+content: '';
+}
+
+.slick-arrow {
+    width: 20px;
+    height: 20px;
+    z-index: 5;
+    border-top: 3px solid white;
+    border-right: 3px solid white;
+    -webkit-transition: opacity 0.3s ease-out;
+    -moz-transition: opacity 0.3s ease-out;
+    transition: opacity 0.3s ease-out;
+}
+
+.slick-arrow:hover {
+    opacity: .5
+}
+
+.slick-prev {
+    left: 1%;  
+    transform: rotate(225deg);
+}
+
+.slick-next {
+    right: 1%;
+    transform: rotate(45deg);
+}
+div.slick-track{
+    height: 100%;
+}
+
+
+@media only screen and (min-width: 600px) {
+    div#pokeOutput{
+
+        position: absolute;
+        width: 100%;
+        height:-webkit-calc(100vh - #{$height-pokedex*2});
+        margin-top: $height-pokedex;
+        margin-bottom: $height-pokedex;        
+        overflow-x: hidden;
+        
+        & .bottom-container{
+            position: relative;
+            float: right;
+            width: 50%;
+        }
+    }
+    div.top-container{
+        position: relative;
+        float: left;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    div.size{
+        position: relative;
+        z-index: 1;
+    }
+    div.size h2 {
+        position: relative;
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        font-weight: 900;
+        text-decoration: none;
+        color: white;
+        display: inline-block;
+        background-size: 120% 100%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-background-clip: text;
+        -moz-text-fill-color: transparent;
+        -ms-background-clip: text;
+        -ms-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        background-image: linear-gradient(45deg, 
+                          $pokeBlue, 
+                          $pokeGrey,
+                          $pokeBlue,
+                          $pokeYellow);
+        animation: .8s shake infinite alternate;
+
+    }
+      
+      @keyframes shake {
+        0% { transform: skewX(-15deg); }
+        5% { transform: skewX(15deg); }
+        10% { transform: skewX(-15deg); }
+        15% { transform: skewX(15deg); }
+        20% { transform: skewX(0deg); }
+        100% { transform: skewX(0deg); }  
+      }
+    div.image-container{
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        border-right: 2px solid $pokedex-shadow;
+    }
+    img#pokeImage{
+        position: relative;
+        height: 100%;
+        background-size: contain;
+    }
+    div.bottom-container{
+        position: absolute;
+        margin: 0 auto;
+        width: 50%;
+        height: 100%;
+
+        & table{
+            height: 70%;
+        }
+    }
+
+    div.pokemon-selection{
+        position: relative;
+        display: block;
+        bottom: 0;
+        width: 100%;
+        height: 30%;
+        background-color:
+         $pokedex-infoColor;
+        overflow:auto;
+        box-sizing: border-box;
+
+
+        & .pokemon-thumb{
+            max-height: -webkit-calc(80% - 0.8rem);
+            min-height: 150px;
+            width: (100% /3 );
+            margin: 0.4rem 0;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-right: 1px double $pokedex-shadow; 
+        }
+    }
+
+    div.pokemon-thumb img{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-size: contain;
+        float: left;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+    color: black;
+    content: '';
+    }
+
+    .slick-arrow {
+        width: 20px;
+        height: 20px;
+        z-index: 5;
+        border-top: 3px solid white;
+        border-right: 3px solid white;
+        -webkit-transition: opacity 0.3s ease-out;
+        -moz-transition: opacity 0.3s ease-out;
+        transition: opacity 0.3s ease-out;
+    }
+
+    .slick-arrow:hover {
+        opacity: .5
+    }
+
+    .slick-prev {
+        left: 1%;  
+        transform: rotate(225deg);
+    }
+
+    .slick-next {
+        right: 1%;
+        transform: rotate(45deg);
+    }
+    div.slick-track{
+        height: 100%;
+    }
+
+}
+
+// Por si algo
+ul.list-cards{
+    width: 80%;
+    height: inherit;
+    display: block;
+    list-style:none;
+    // background-color: rgba(0, 0, 255, 0.178);
+    margin: 0 auto;
+    padding: 0; 
+    margin-top: 4em;
+    
+    li{
+        width: 100%;
+        height: auto;
+        padding: 0;
+        margin: 0 auto;
+    }
+}
+@media only screen and (min-width: 550px){
+    ul.list-cards{
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: auto;
+        gap: 20px;
+
+    }
+}
+@media only screen and (min-width: 760px){
+    ul.list-cards{
+        display: grid;
+        grid-template-columns: repeat(3, 33.33%);
+        grid-template-rows: auto;
+        gap: 20px;
+
+    }
+}
+@media only screen and (min-width: 1080px){
+    ul.list-cards{
+        display: grid;
+        grid-template-columns: repeat(4, 25%);
+        grid-template-rows: auto;
+        gap: 20px;
+
+    }
+}
+
+
+.card {
+    margin: 8px;
+    position: relative;
+    border-radius: 2px;
+    overflow: hidden;
+    background-color: #fafafa;
+    max-width: 240px; 
+    height: fit-content;
+    transition: all 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+    border: 2px solid black;
+    border-width: 5px 3px 3px 5px;
+    border-radius:95% 4% 97% 5%/4% 94% 3% 95%;
+    transform: skewX(-2deg);
+    word-wrap: break-word;
+
+}
+
+.card__image {
+    position: absolute;
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repat;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: block;
+    opacity: 0;
+    transition: all 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    &::after{
+        content: "";
+        display: block;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.1);
+        top: 0;
+        left: 0;
+        right: 0;
+        transition: all 500ms;
+        bottom: 0;
+        word-wrap: break-word;
+
+    }
+}
+
+.card__title {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    font-size: calc(100% - 0.6vw);
+    color: white;
+    font-family: 'Patrick Hand SC';
+    margin: 0;
+    position: absolute;
+    display: flex;
+    text-justify: distribute;
+    justify-content: flex-start;
+    left: 0;
+    right: 0;
+    padding: 0 16px;
+    font-weight: 400;
+    text-overflow: clip;
+    overflow: hidden;
+    transition: all 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.card__action-bar {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    position: absolute;
+    bottom: 0;
+    top: auto;
+    left: 0;
+    right: 0;
+    padding: 0;
+    border-top: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    height: 52px;
+    display: grid;
+    grid-template-columns: repeat(2, calc(100% / 2));
+
+    & h1{
+        font-family: "Bangers";
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+    }
+}
+.card__button {
+    outline: none;
+    position: relative;
+    display: inline-block;
+    font-family: "Patrick Hand SC";
+    font-weight: 600;
+    font-size: 3rem;
+    overflow: hidden;
+    line-height: 52px;
+    padding: 0 6px;
+    background:transparent;
+    border: 0;
+    color: #FF1744;
+    transition: all 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+
+    &::after{
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 5px;
+        height: 5px;
+        background: rgba(255, 23, 69, 0.404);
+        opacity: 0;
+        border-radius: 100%;
+        transform: scale(1, 1) translate(-50%);
+        transform-origin: 50% 50%;
+    }
+    &:focus:not(:active)::after {
+        animation: ripple 1s ease-out;
+    }
+    &:first-child{
+        grid-column: 2;
+        padding: 0 3px;
+    }
+}
+@keyframes ripple {
+    0% {
+      transform: scale(0, 0);
+      opacity: 1;
+    }
+    20% {
+      transform: scale(10, 10);
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: scale(30, 30);
+    }
+  }
+
+.card--big {
+    box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3), 0 17px 17px 0 rgba(0, 0, 0, 0.15);
+    height: 304px;
+    min-height: 224px;
+}
+.card--big .card__image {
+    border-radius: 1px 1px 0 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    opacity: 1;
+    max-height: 176px;
+}
+.card--big .card__title {
+    top: 0;
+    background-color: rgba(255, 0, 0, 0.521);
+}
+.card--big .card__text {
+    top: 176px;
+}
+.card--big .card__action-bar {
+    left: 0;
+}

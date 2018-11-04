@@ -1,0 +1,40 @@
+@import '../../../sass/variables';
+
+main.container{
+    position: relative;
+    margin: 0 auto;
+    width: 90%;
+    height:100vh;
+    font-family: 'PokemonGb';
+    background-color: $glass;
+    -webkit-box-shadow: 0px 0px 4px 1px rgba(34,157,168,1);
+    -moz-box-shadow: 0px 0px 4px 1px rgba(34,157,168,1);
+    box-shadow: 0px 0px 4px 1px rgba(34,157,168,1),
+                inset 0px -4px 18px 0px #fff;
+
+    &::after{
+        content: '';
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+        width: 100%;
+        height: $height-pokedex+2;
+        background-color: $pokedex-shadow;
+        border-radius: 0 0 22px 22px;
+        filter: blur(3px);
+
+    }
+    &::before{
+        content: '';
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        width: 100%;
+        height: $height-pokedex+2;
+        background-color: $pokedex-shadow;
+        border-radius:22px 22px 0 0 ;
+        filter: blur(3px);
+    }
+}
