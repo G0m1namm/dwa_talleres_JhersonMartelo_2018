@@ -36,6 +36,7 @@ export class ListPokemonComponent implements OnInit {
 
   verDetalle(_index) {
     this._router.navigate(['/list/'+_index]);
+    console.log(_index);
   }
 
   volverAtras() {

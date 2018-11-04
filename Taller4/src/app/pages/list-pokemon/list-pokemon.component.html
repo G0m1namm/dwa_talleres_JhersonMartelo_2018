@@ -10,13 +10,12 @@
         <div class="size">
           <h2 class="card__title">{{pokemon.nombre}}</h2>
         </div>
-        <div class="card__action-bar panel yellow">
+        <div class="card__action-bar">
           <h1>Ver Detalle</h1>
-          <button  class="card__button">➸</button>
+          <button  class="card__button" (click)="verDetalle(pokemon.id)">➸</button>
         </div>
       </li>
     </ul>
-
 
   </div>
 </section>
