@@ -19,7 +19,7 @@ export class ListPokemonComponent implements OnInit {
       new PokemonElement("Bulbasaur",1,19,"veneno","Chlorophyll",69,7,"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"),
       new PokemonElement("Ivisaur",2,62,"veneno","Chlorophyll",130,10,"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png"),
       new PokemonElement("Venusaur",3,82,"veneno","Chlorophyll",1000,20,"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png"),
-      new PokemonElement("Charmanderr",4,52,"fuego","Solar-Power",85,6,"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"),
+      new PokemonElement("Charmander",4,52,"fuego","Solar-Power",85,6,"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"),
       new PokemonElement("Charmeleon",5,64,"fuego","Solar-Power",190,11,"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png"),
       new PokemonElement("Charizard",6,84,"fuego","Solar-Power",905,17,"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png"),
       new PokemonElement("Squirtle",7,48,"Agua","Rain-Dish",90,5,"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png"),

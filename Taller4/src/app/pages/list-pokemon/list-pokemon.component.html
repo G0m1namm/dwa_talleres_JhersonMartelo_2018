@@ -1,5 +1,22 @@
 <section class="wrapper">
-  <ul class="container">
-    <li *ngFor="let list of ; let i=index"></li>
-  </ul>
+  <div id="pokeOutput">
+     
+    <div class="size">
+      <h2>Lista de Pokemones</h2>
+    </div>
+    <ul class="list-cards">
+      <li class="card card--big" *ngFor="let pokemon of listPokemon">
+        <img src="{{pokemon.image}}" alt="{{pokemon.nombre}}" class="card__image">
+        <div class="size">
+          <h2 class="card__title">{{pokemon.nombre}}</h2>
+        </div>
+        <div class="card__action-bar panel yellow">
+          <h1>Ver Detalle</h1>
+          <button  class="card__button">➸</button>
+        </div>
+      </li>
+    </ul>
+
+
+  </div>
 </section>
