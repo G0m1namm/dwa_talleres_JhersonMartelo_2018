@@ -1,22 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { PokemonElement } from '../../pages/list-pokemon/pokemon.model';
-
+import { PokemonElement } from '../list-pokemon/pokemon.model';
 
 @Component({
-  selector: 'app-main',
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss']
+  selector: 'app-list-pokemon',
+  templateUrl: './list-pokemon.component.html',
+  styleUrls: ['./list-pokemon.component.scss']
 })
-export class MainComponent implements OnInit {
+export class ListPokemonComponent implements OnInit {
   public listPokemon:Array<PokemonElement>;
   public parametroUrl:string;
-
 
   constructor(
     private _router:Router,
     private _route:ActivatedRoute
-  ) {
+  ) { 
     this.listPokemon = [
       new PokemonElement("Bulbasaur",1,19,"veneno","Chlorophyll",69,7,"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"),
       new PokemonElement("Ivisaur",2,62,"veneno","Chlorophyll",130,10,"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png"),
@@ -28,26 +26,21 @@ export class MainComponent implements OnInit {
       new PokemonElement("Wartortle",8,63,"Agua","Rain-Dish",255,10,"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png"),
       new PokemonElement("Blastoise",9,83,"Agua","Rain-Dish",855,16,"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png"),
     ]
-   }
+  }
 
   ngOnInit() {
     this._route.params.forEach((params:Params) => {
-      console.log(params['ident']);
-    
       this.parametroUrl = params['ident'];
-      console.log(this.parametroUrl);
-
     });
-
-    
   }
 
+  verDetalle(_index) {
+    this._router.navigate(['/list/'+_index]);
+    console.log(_index);
+  }
 
   volverAtras() {
     this._router.navigate(['/list']);
   }
-
-
-
 
 }

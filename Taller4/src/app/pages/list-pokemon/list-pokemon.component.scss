@@ -50,10 +50,10 @@ section.wrapper{
         text-transform: uppercase;
         letter-spacing: 6px;
         font-weight: 900;
-        font-size:1.2rem;
         text-decoration: none;
+        text-align: center;
+        font-size:1.2rem;
         color: white;
-        display: inline-block;
         background-size: 120% 100%;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -172,14 +172,11 @@ div.slick-track{
     div#pokeOutput{
 
         position: absolute;
-        // display: flex;
-        // justify-content: center;
-        // align-items: center;
         width: 100%;
         height:-webkit-calc(100vh - #{$height-pokedex*2});
         margin-top: $height-pokedex;
         margin-bottom: $height-pokedex;        
-        overflow: hidden;
+        overflow-x: hidden;
         
         & .bottom-container{
             position: relative;
@@ -223,7 +220,8 @@ div.slick-track{
                           $pokeBlue,
                           $pokeYellow);
         animation: .8s shake infinite alternate;
-      }
+
+    }
       
       @keyframes shake {
         0% { transform: skewX(-15deg); }
@@ -324,25 +322,217 @@ div.slick-track{
 
 }
 
-.button-back{
+// Por si algo
+ul.list-cards{
+    width: 80%;
+    height: inherit;
+    display: block;
+    list-style:none;
+    // background-color: rgba(0, 0, 255, 0.178);
+    margin: 0 auto;
+    padding: 0; 
+    margin-top: 4em;
+    
+    li{
+        width: 100%;
+        height: auto;
+        padding: 0;
+        margin: 0 auto;
+    }
+}
+@media only screen and (min-width: 550px){
+    ul.list-cards{
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: auto;
+        gap: 20px;
+
+    }
+}
+@media only screen and (min-width: 760px){
+    ul.list-cards{
+        display: grid;
+        grid-template-columns: repeat(3, 33.33%);
+        grid-template-rows: auto;
+        gap: 20px;
+
+    }
+}
+@media only screen and (min-width: 1080px){
+    ul.list-cards{
+        display: grid;
+        grid-template-columns: repeat(4, 25%);
+        grid-template-rows: auto;
+        gap: 20px;
+
+    }
+}
+
+
+.card {
+    margin: 8px;
+    position: relative;
+    border-radius: 2px;
+    overflow: hidden;
+    background-color: #fafafa;
+    max-width: 240px; 
+    height: fit-content;
+    transition: all 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+    border: 2px solid black;
+    border-width: 5px 3px 3px 5px;
+    border-radius:95% 4% 97% 5%/4% 94% 3% 95%;
+    transform: skewX(-2deg);
+    word-wrap: break-word;
+
+}
+
+.card__image {
+    position: absolute;
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repat;
     width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: block;
+    opacity: 0;
+    transition: all 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    &::after{
+        content: "";
+        display: block;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.1);
+        top: 0;
+        left: 0;
+        right: 0;
+        transition: all 500ms;
+        bottom: 0;
+        word-wrap: break-word;
+
+    }
+}
+
+.card__title {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    font-size: calc(100% - 0.6vw);
+    color: white;
+    font-family: 'Patrick Hand SC';
+    margin: 0;
+    position: absolute;
+    display: flex;
+    text-justify: distribute;
+    justify-content: flex-start;
+    left: 0;
+    right: 0;
+    padding: 0 16px;
+    font-weight: 400;
+    text-overflow: clip;
+    overflow: hidden;
+    transition: all 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.card__action-bar {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    position: absolute;
+    bottom: 0;
+    top: auto;
+    left: 0;
+    right: 0;
+    padding: 0;
+    border-top: 1px solid #E0E0E0;
+    box-sizing: border-box;
     height: 52px;
     display: grid;
-    grid-template-columns: repeat(2, 50%);
+    grid-template-columns: repeat(2, calc(100% / 2));
 
-    h1{
+    & h1{
+        font-family: "Bangers";
+        margin: 0 auto;
         display: flex;
         justify-content: center;
-        align-self: center;
+        align-items: center;
         font-size: 1rem;
     }
+}
+.card__button {
+    outline: none;
+    position: relative;
+    display: inline-block;
+    font-family: "Patrick Hand SC";
+    font-weight: 600;
+    font-size: 3rem;
+    overflow: hidden;
+    line-height: 52px;
+    padding: 0 6px;
+    background:transparent;
+    border: 0;
+    color: #FF1744;
+    transition: all 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
 
-    button{
-        outline: none;
-        border: 0;
-        color: #FF1744;
-        font-size: 3rem;
-        background-color: transparent;
-        transform: rotate(-180deg);
+    &::after{
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 5px;
+        height: 5px;
+        background: rgba(255, 23, 69, 0.404);
+        opacity: 0;
+        border-radius: 100%;
+        transform: scale(1, 1) translate(-50%);
+        transform-origin: 50% 50%;
     }
+    &:focus:not(:active)::after {
+        animation: ripple 1s ease-out;
+    }
+    &:first-child{
+        grid-column: 2;
+        padding: 0 3px;
+    }
+}
+@keyframes ripple {
+    0% {
+      transform: scale(0, 0);
+      opacity: 1;
+    }
+    20% {
+      transform: scale(10, 10);
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: scale(30, 30);
+    }
+  }
+
+.card--big {
+    box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3), 0 17px 17px 0 rgba(0, 0, 0, 0.15);
+    height: 304px;
+    min-height: 224px;
+}
+.card--big .card__image {
+    border-radius: 1px 1px 0 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    opacity: 1;
+    max-height: 176px;
+}
+.card--big .card__title {
+    top: 0;
+    background-color: rgba(255, 0, 0, 0.521);
+}
+.card--big .card__text {
+    top: 176px;
+}
+.card--big .card__action-bar {
+    left: 0;
 }
